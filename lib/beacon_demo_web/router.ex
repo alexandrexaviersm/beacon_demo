@@ -32,4 +32,10 @@ defmodule BeaconDemoWeb.Router do
     pipe_through :api
     beacon_api "/"
   end
+
+  scope "/", BeaconDemoWeb do
+    pipe_through :browser
+
+    get "/", PageController, :home
+  end
 end
