@@ -22,9 +22,17 @@ defmodule BeaconDemo.Application do
          [
            site: :demo,
            data_source: BeaconDemo.BeaconDataSource,
-           endpoint: BeaconDemoWeb.Endpoint
+           endpoint: BeaconDemoWeb.Endpoint,
+           tailwind_config:
+             Path.join(Application.app_dir(:beacon_demo, "priv"), "tailwind.config.js.eex")
          ],
-         [site: :blog, data_source: BeaconDemo.BeaconDataSource, endpoint: BeaconDemoWeb.Endpoint]
+         [
+           site: :blog,
+           data_source: BeaconDemo.BeaconDataSource,
+           endpoint: BeaconDemoWeb.Endpoint,
+           tailwind_config:
+             Path.join(Application.app_dir(:beacon_demo, "priv"), "tailwind.config.js.eex")
+         ]
        ]},
       # Start the Endpoint (http/https)
       BeaconDemoWeb.Endpoint
