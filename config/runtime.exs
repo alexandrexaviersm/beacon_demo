@@ -66,6 +66,11 @@ if config_env() == :prod do
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: port
     ],
+    check_origin: [
+      "https://dy-beacon-demo.fly.dev/",
+      "https://demo1.ngrok.dev",
+      "https://blog1.ngrok.dev"
+    ],
     secret_key_base: secret_key_base
 
   # ## SSL Support

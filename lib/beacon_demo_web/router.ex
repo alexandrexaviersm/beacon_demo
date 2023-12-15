@@ -17,9 +17,15 @@ defmodule BeaconDemoWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/" do
+  scope "/", host: ["demo1.ngrok.dev"] do
     pipe_through :browser
+
     beacon_site "/demo", site: :demo
+  end
+
+  scope "/", host: ["blog1.ngrok.dev"] do
+    pipe_through :browser
+
     beacon_site "/blog", site: :blog
   end
 
